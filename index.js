@@ -16,7 +16,7 @@ App.use(
 )
 App.use(
   cors_({
-    origin: 'https://arcontroller.vercel.app/' || 'http://localhost:3000'
+    origin: 'https://arcontroller-front.vercel.app/' || 'http://localhost:3000'
   })
 )
 

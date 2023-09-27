@@ -22,6 +22,9 @@ App.use(
 )
 
 App.use('/home', (req, res) => {
+  console.log('====================================')
+  console.log('hola')
+  console.log('====================================')
   res.send('Cpanel aqui')
 })
 

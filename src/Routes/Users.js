@@ -41,13 +41,15 @@ router.post('/users/auth', async (req, res) => {
     //proceso
     try {
       await Conexiondb(id_prod)
-      //consultar si existe
+      console.log('consultar si existe')
       let respFindByUSUandPsw = await FindByUSUandPsw(
         user,
         pswLogin,
         clav_prodct
       )
+      console.log('...')
       if (respFindByUSUandPsw !== null && respFindByUSUandPsw !== 'bad') {
+        console.log('existente')
         jwt.sign(
           respFindByUSUandPsw.user +
             ';' +
@@ -77,6 +79,7 @@ router.post('/users/auth', async (req, res) => {
           }
         )
       } else {
+        console.log('No encontrado')
         res.json({
           valor: 403,
           msj: `${user} E-403: No se encontraron coincidencias `

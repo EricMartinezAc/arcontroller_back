@@ -7,5 +7,6 @@ const Conexiondb = id_prod =>
     `${process.env.MONGODB_URI}${id_prod}${process.env.MONGODB_URI_config}`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
+mongoose.set('strictQuery', true)
 
 module.exports = Conexiondb
